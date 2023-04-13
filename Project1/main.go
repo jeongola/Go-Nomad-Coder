@@ -1,9 +1,8 @@
 package main
 
 import (
+	"Project1/main.go/banking"
 	"fmt"
-
-	"github.com/jeongola/Go-Nomad-Coder/Project1/banking"
 )
 
 func main() {
