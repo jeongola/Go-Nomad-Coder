@@ -1,11 +1,18 @@
 package main
 
 import (
-	"Project1/main.go/banking"
+	"Project1/main.go/accounts"
 	"fmt"
+	"log"
 )
 
 func main() {
-	account := banking.Account{Owner: "nicolas", Balance: 1000}
-	fmt.Println(account)
+	account := accounts.NewAccount("nico")
+	account.Deposit(10)
+	fmt.Println(account.Balance())
+	err := account.Withdraw(20)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(account.Balance())
 }
