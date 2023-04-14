@@ -9,10 +9,13 @@ func main() {
 	dictionary := mydict.Dictionary{}
 	baseword := "hello"
 	dictionary.Add(baseword, "First")
-	err := dictionary.Update("fsafa", "Second")
+	dictionary.Search(baseword)
+	dictionary.Delete(baseword)
+	word, err := dictionary.Search(baseword)
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println(word)
 	}
-	word, _ := dictionary.Search(baseword)
 	fmt.Println(word)
 }
