@@ -12,16 +12,12 @@ func main() {
 		go isSexy(person, c)
 	}
 
-	fmt.Println("Waiting for messages")
-	resultOne := <-c
-	resultTwo := <-c
-	fmt.Println("Received this message:", resultOne)
-	fmt.Println("Received this message:", resultTwo)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
 
 }
 
 func isSexy(person string, c chan string) {
 	time.Sleep(time.Second * 10)
-	fmt.Println(person)
 	c <- person + " is sexy"
 }
