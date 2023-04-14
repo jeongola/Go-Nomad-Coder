@@ -6,11 +6,13 @@ import (
 )
 
 func main() {
-	dictionary := mydict.Dictionary{"first": "First word"}
-	definition, err := dictionary.Search("second")
+	dictionary := mydict.Dictionary{}
+	baseword := "hello"
+	dictionary.Add(baseword, "First")
+	err := dictionary.Update("fsafa", "Second")
 	if err != nil {
 		fmt.Println(err)
-	} else {
-		fmt.Println(definition)
 	}
+	word, _ := dictionary.Search(baseword)
+	fmt.Println(word)
 }
